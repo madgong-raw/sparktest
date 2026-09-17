@@ -1,0 +1,70 @@
+Execise2:
+
+1. Overall Claim Metrics: Calculate:
+	Total number of claims
+	Total claim amount
+	Total approved amount
+	Total outstanding amount
+	Average claim amount
+	Maximum claim amount
+	Minimum claim amount
+	
+Overall Claim Metrics:
++------------+------------------+---------------------+------------------------+--------------------+--------------------+--------------------+
+|total_claims|total_claim_amount|total_approved_amount|total_outstanding_amount|average_claim_amount|maximum_claim_amount|minimum_claim_amount|
++------------+------------------+---------------------+------------------------+--------------------+--------------------+--------------------+
+|          19|           3126000|              2261000|                  865000|  164526.31578947368|              600000|               15000|
++------------+------------------+---------------------+------------------------+--------------------+--------------------+--------------------+
+
+
+2. Group claims by claim_type and calculate:
+	Number of claims
+	Total claim amount
+	Total approved amount
+	Average claim amount
+	
+
+Claims Grouped by Type:
++------------------+------------+------------------+---------------------+--------------------+
+|        claim_type|total_claims|total_claim_amount|total_approved_amount|average_claim_amount|
++------------------+------------+------------------+---------------------+--------------------+
+|             Theft|           3|           1550000|               970000|   516666.6666666667|
+| Accidental Damage|           8|           1275000|              1045000|            159375.0|
+|Third Party Injury|           1|             45000|                30000|             45000.0|
+|      Glass Damage|           5|             91000|                76000|             18200.0|
+|  Natural Calamity|           2|            165000|               140000|             82500.0|
++------------------+------------+------------------+---------------------+--------------------+
+
+
+3. Group claims by fraud_flag and calculate:
+	Number of claims
+	Total claim amount
+	Total approved amount
+	
+Claims Grouped by Fraud Flag:
++----------+------------+------------------+---------------------+
+|fraud_flag|total_claims|total_claim_amount|total_approved_amount|
++----------+------------+------------------+---------------------+
+|         1|           2|           1100000|               550000|
+|         0|          17|           2026000|              1711000|
++----------+------------+------------------+---------------------+
+
+4. Find the total claim amount and total approved amount for fraud-flagged claims only.
+
+Fraud-Flagged Claims Metrics:
++------------------+---------------------+
+|total_claim_amount|total_approved_amount|
++------------------+---------------------+
+|           1100000|               550000|
++------------------+---------------------+
+
+5. Group claims by policy_id and identify policies having more than one claim.
+
+Policies with More Than One Claim:
++---------+------------+
+|policy_id|total_claims|
++---------+------------+
+|     P012|           2|
+|     P002|           2|
+|     P005|           2|
++---------+------------+
