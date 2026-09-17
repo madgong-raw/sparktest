@@ -1,0 +1,18 @@
+policy_id,vehicle_id,policy_type,policy_start_date,policy_end_date,premium_amount,sum_insured,sales_channel,policy_status
+P001,V001,Comprehensive,2025-01-15,2026-01-14,14500,600000,Online,Expired
+P002,V002,Comprehensive,2025-02-10,2026-02-09,32000,1350000,Agent,Expired
+P003,V003,Third Party,2025-03-05,2026-03-04,6500,300000,Online,Expired
+P004,V004,Comprehensive,2025-01-20,2026-01-19,38500,1700000,Agent,Expired
+P005,V005,Comprehensive,2025-04-01,2026-03-31,45000,2000000,Branch,Expired
+P006,V006,Own Damage,2025-02-15,2026-02-14,18000,1000000,Online,Expired
+P007,V007,Comprehensive,2025-05-10,2026-05-09,35000,1400000,Agent,Expired
+P008,V008,Third Party,2025-06-01,2026-05-31,5500,300000,Online,Expired
+P009,V009,Comprehensive,2025-01-05,2026-01-04,41000,1650000,Branch,Expired
+P010,V010,Own Damage,2025-03-15,2026-03-14,16000,700000,Online,Expired
+P011,V001,Comprehensive,2026-01-15,2027-01-14,15200,620000,Online,Active
+P012,V002,Comprehensive,2026-02-10,2027-02-09,33500,1400000,Agent,Active
+P013,V003,Comprehensive,2026-03-05,2027-03-04,12500,850000,Online,Active
+P014,V004,Comprehensive,2026-01-20,2027-01-19,40000,1750000,Agent,Active
+P015,V005,Comprehensive,2026-04-01,2027-03-31,47000,2050000,Branch,Active
+P016,V011,Comprehensive,2026-02-01,2027-01-31,17000,700000,Online,Active
+P017,V012,Own Damage,2026-03-01,2027-02-28,19000,750000,Agent,Active

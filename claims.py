@@ -1,0 +1,17 @@
+from pyspark.sql import SparkSession
+from pyspark.sql import functions as F
+spark = SparkSession.builder.appName("MyTestApp").master("local[1]").getOrCreate()
+spark.sparkContext.setLogLevel("ERROR")
+claims = spark.read.csv("Demo/claims.csv", header=True, inferSchema=True)
+# claims.show(2)
+# claims.printSchema()
+claims_df = claims.select("claim_id","claim_type","claim_amount","approved_amount","claim_status")
+# claims_df.show(2)
+claims_review_df = claims_df.filter(claims_df.claim_status == "Under Review")
+# claims_review_df.show(2)
+claims_newColumn_df = claims_df.withColumn("claim_updates", F.when(F.col("claim_amount") == 0, "No Claim").otherwise("Amount under Review"))
+# claims_newColumn_df.show(2)
+claims_sorted_df = claims_df.orderBy(F.col("claim_amount").desc())
+claims_sorted_df.show(10)
+claims_dropDuplicates_df = claims_df.dropDuplicates(["claim_id"])
+claims_dropDuplicates_df.show(10)   

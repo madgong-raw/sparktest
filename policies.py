@@ -1,0 +1,17 @@
+from pyspark.sql import SparkSession
+from pyspark.sql import functions as F
+spark = SparkSession.builder.appName("MyTestApp").master("local[1]").getOrCreate()
+spark.sparkContext.setLogLevel("ERROR")
+policies = spark.read.csv("Demo/policies.csv", header=True, inferSchema=True)
+# policies.show(2)
+# policies.printSchema()
+# df = policies.select("policy_id", "vehicle_id","policy_type","policy_start_date","policy_end_date","premium_amount","sum_insured","sales_channel","policy_status")
+# df.show(2)
+pol_os_amount_df = policies.withColumn("policy_os_amount", F.col("sum_insured") - F.col("premium_amount"))
+# pol_os_amount_df.select("policy_id", "vehicle_id", "sum_insured", "premium_amount", "policy_os_amount").show(2)
+pol_os_col1_df = pol_os_amount_df.withColumn("datasource", F.lit("policies"))
+# pol_os_col1_df.select("policy_id", "premium_amount", "policy_os_amount", "datasource").show(2)
+pol_os_col2_df = pol_os_col1_df.withColumn("policy_duration", F.datediff(F.col("policy_end_date"), F.col("policy_start_date")))
+# pol_os_col2_df.select("policy_id", "policy_start_date", "policy_end_date", "policy_duration").show(2)
+pol_os_col3_df = pol_os_col2_df.withColumn("policy_status_flag", F.when(F.col("policy_status") == "Active", 1).otherwise(0))
+pol_os_col3_df.select("policy_id", "policy_status", "policy_status_flag").show()

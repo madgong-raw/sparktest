@@ -1,0 +1,11 @@
+customer_id,customer_name,city,state,agent,customer_segment
+C001,Acme Retail,New York,NY,Aisha Khan,Enterprise
+C002,Blue Sky Foods,Chicago,IL,Marcus Lee,Mid-Market
+C003,Green Valley Health,Austin,TX,Sofia Martinez,Enterprise
+C004,Northstar Supplies,Seattle,WA,Daniel Brooks,Small Business
+C005,Sunrise Electronics,Atlanta,GA,Emily Carter,Mid-Market
+C006,Urban Home Goods,Denver,CO,Noah Wilson,Small Business
+C007,Maple Financial,Boston,MA,Olivia Brown,Enterprise
+C008,Coastal Logistics,Miami,FL,Liam Davis,Mid-Market
+C009,Fresh Farm Market,Portland,OR,Ava Thompson,Small Business
+C010,Silverline Media,San Francisco,CA,Ethan Garcia,Enterprise

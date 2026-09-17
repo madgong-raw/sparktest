@@ -1,0 +1,20 @@
+claim_id,policy_id,claim_date,claim_type,claim_amount,approved_amount,claim_status,fraud_flag
+CL001,P001,2025-06-10,Accidental Damage,85000,72000,Settled,0
+CL002,P002,2025-07-15,Glass Damage,18000,15000,Settled,0
+CL003,P002,2025-11-20,Accidental Damage,220000,180000,Settled,0
+CL004,P003,2025-03-05,Third Party Injury,45000,30000,Settled,0
+CL005,P004,2025-01-20,Theft,450000,420000,Settled,0
+CL006,P005,2025-04-01,Accidental Damage,310000,250000,Settled,0
+CL007,P005,2025-05-10,Glass Damage,22000,18000,Settled,0
+CL008,P006,2025-02-15,Natural Calamity,95000,80000,Approved,0
+CL009,P007,2025-05-10,Accidental Damage,175000,140000,Settled,0
+CL010,P009,2025-01-05,Theft,600000,550000,Settled,1
+CL011,P010,2025-03-15,Glass Damage,16000,14000,Settled,0
+CL012,P011,2026-01-15,Accidental Damage,45000,38000,Approved,0
+CL013,P012,2026-02-10,Accidental Damage,125000,100000,Approved,0
+CL014,P012,2026-02-10,Glass Damage,20000,17000,Approved,0
+CL015,P013,2026-03-05,Natural Calamity,70000,60000,Approved,0
+CL016,P014,2026-01-20,Accidental Damage,250000,210000,Under Review,0
+CL017,P015,2026-04-01,Theft,500000,0,Under Review,1
+CL018,P016,2026-02-01,Glass Damage,15000,12000,Approved,0
+CL019,P017,2026-03-01,Accidental Damage,65000,55000,Approved,0

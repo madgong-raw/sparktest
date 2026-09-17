@@ -1,0 +1,7 @@
+garage_id,garage_name,city,garage_type,rating
+G001,Chennai Auto Care,Chennai,Authorized,4.5
+G002,Bangalore Motor Works,Bengaluru,Authorized,4.3
+G003,Hyderabad Auto Hub,Hyderabad,MultiBrand,4.1
+G004,Pune Car Care,Pune,Authorized,4.4
+G005,Mumbai Auto Works,Mumbai,Network,4.2
+G006,Kochi Vehicle Care,Kochi,Network,4.0

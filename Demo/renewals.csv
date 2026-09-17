@@ -1,0 +1,11 @@
+renewal_id,policy_id,renewal_due_date,renewal_date,renewal_status
+R001,P001,2026-01-14,2026-01-10,Renewed
+R002,P002,2026-02-09,2026-02-05,Renewed
+R003,P003,2026-03-04,,Not Renewed
+R004,P004,2026-01-19,2026-01-15,Renewed
+R005,P005,2026-03-31,2026-03-25,Renewed
+R006,P006,2026-02-14,,Not Renewed
+R007,P007,2026-05-09,2026-05-01,Renewed
+R008,P008,2026-05-31,,Not Renewed
+R009,P009,2026-01-04,2026-01-02,Renewed
+R010,P010,2026-03-14,,Not Renewed

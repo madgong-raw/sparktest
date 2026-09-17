@@ -1,0 +1,12 @@
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.appName("MyTestApp").master("local[1]").getOrCreate()
+spark.sparkContext.setLogLevel("ERROR")
+vehicles = spark.read.csv("Demo/vehicles.csv", header=True, inferSchema=True)
+vehicles.show(2)
+vehicles.printSchema()
+df = vehicles.select("vehicle_id", "customer_id", "make", "model", "fuel_type")
+df.show(2)
+filtered_df = df.filter(df.fuel_type == "Petrol")
+filtered_df.show(2)
+make_df = vehicles.groupBy("make").count()
+print(make_df.count())

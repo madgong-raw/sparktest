@@ -1,0 +1,13 @@
+vehicle_id,customer_id,make,model,model_year,fuel_type,vehicle_value
+V001,C001,Maruti,Swift,2021,Petrol,650000
+V002,C002,Hyundai,Creta,2022,Diesel,1450000
+V003,C003,Tata,Nexon,2023,Petrol,950000
+V004,C004,Toyota,Innova,2020,Diesel,1800000
+V005,C005,Mahindra,XUV700,2023,Diesel,2100000
+V006,C006,Honda,City,2021,Petrol,1200000
+V007,C007,Kia,Seltos,2022,Petrol,1500000
+V008,C008,Renault,Kiger,2023,Petrol,850000
+V009,C009,Tata,Harrier,2020,Diesel,1750000
+V010,C010,Hyundai,i20,2021,Petrol,800000
+V011,C001,Maruti,Baleno,2022,Petrol,750000
+V012,C002,Toyota,Glanza,2023,Petrol,900000
