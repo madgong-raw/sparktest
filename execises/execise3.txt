@@ -1,0 +1,188 @@
+Execise3:
+
+
+1. JOINS: Join claims with policies using policy_id. Display:
+	Claim ID
+	Policy ID
+	Claim type
+	Claim amount
+	Policy type
+	Premium amount
+	Sum insured
+	Policy status
+	
++--------+---------+------------------+------------+-------------+--------------+-----------+-------------+
+|claim_id|policy_id|        claim_type|claim_amount|  policy_type|premium_amount|sum_insured|policy_status|
++--------+---------+------------------+------------+-------------+--------------+-----------+-------------+
+|   CL001|     P001| Accidental Damage|       85000|Comprehensive|         14500|     600000|  Expired|
+|   CL002|     P002|      Glass Damage|       18000|Comprehensive|         32000|    1350000|  Expired|
+|   CL003|     P002| Accidental Damage|      220000|Comprehensive|         32000|    1350000|  Expired|
+|   CL004|     P003|Third Party Injury|       45000|  Third Party|          6500|     300000|  Expired|
+|   CL005|     P004|             Theft|      450000|Comprehensive|         38500|    1700000|  Expired|
+|   CL006|     P005| Accidental Damage|      310000|Comprehensive|         45000|    2000000|  Expired|
+|   CL007|     P005|      Glass Damage|       22000|Comprehensive|         45000|    2000000|  Expired|
+|   CL008|     P006|  Natural Calamity|       95000|   Own Damage|         18000|    1000000|  Expired|
+|   CL009|     P007| Accidental Damage|      175000|Comprehensive|         35000|    1400000|  Expired|
+|   CL010|     P009|             Theft|      600000|Comprehensive|         41000|    1650000|  Expired|
++--------+---------+------------------+------------+-------------+--------------+-----------+-------------+
+only showing top 10 rows
+
+2. Perform a left join between policies and claims and identify the policies that do not have claims.
+
++---------+----------+-----------+--------------+-----------+-------------+
+|policy_id|vehicle_id|policy_type|premium_amount|sum_insured|policy_status|
++---------+----------+-----------+--------------+-----------+-------------+
+|     P008|      V008|Third Party|          5500|     300000|      Expired|
++---------+----------+-----------+--------------+-----------+-------------+
+
+
+3. Join policies with vehicles using vehicle_id. Display:
+	Policy ID
+	Vehicle ID
+	Policy type
+	Premium amount
+	Vehicle make
+	Vehicle model
+	Vehicle value
+	
++---------+----------+-------------+--------------+--------+-------+-------------+
+|policy_id|vehicle_id|  policy_type|premium_amount|    make|  model|vehicle_value|
++---------+----------+-------------+--------------+--------+-------+-------------+
+|     P001|      V001|Comprehensive|         14500|  Maruti|  Swift|       650000|
+|     P002|      V002|Comprehensive|         32000| Hyundai|  Creta|      1450000|
+|     P003|      V003|  Third Party|          6500|    Tata|  Nexon|       950000|
+|     P004|      V004|Comprehensive|         38500|  Toyota| Innova|      1800000|
+|     P005|      V005|Comprehensive|         45000|Mahindra| XUV700|      2100000|
+|     P006|      V006|   Own Damage|         18000|   Honda|   City|      1200000|
+|     P007|      V007|Comprehensive|         35000|     Kia| Seltos|      1500000|
+|     P008|      V008|  Third Party|          5500| Renault|  Kiger|       850000|
+|     P009|      V009|Comprehensive|         41000|    Tata|Harrier|      1750000|
+|     P010|      V010|   Own Damage|         16000| Hyundai|    i20|       800000|
++---------+----------+-------------+--------------+--------+-------+-------------+
+only showing top 10 rows
+
+5. Analyze Claims by Customer Segment: Using the multi-table joined DataFrame, group by customer_segment and calculate:
+	Number of claims
+	Total claim amount
+	Total approved amount
+	Average claim amount
+	
++----------------+----------+------------------+---------------------+-----------------+
+|customer_segment|num_claims|total_claim_amount|total_approved_amount| avg_claim_amount|
++----------------+----------+------------------+---------------------+-----------------+
+|      Mid-Market|         8|           1280000|               635000|         160000.0|
+|      Enterprise|         7|            451000|               366000|64428.57142857143|
+|  Small Business|         4|           1395000|              1260000|         348750.0|
++----------------+----------+------------------+---------------------+-----------------+
+
+6. Identify High-Risk Claims: Using the multi-table joined DataFrame, display claims where:
+	Claim amount is greater than ₹200,000, and
+	Fraud flag is 1 or claim status is "Under Review".
+	Display customer and vehicle details along with the claim information.
+
++--------+---------+-------------------+--------+--------+-------+------------+---------------+------------+----------+
+|claim_id|policy_id|      customer_name|    city|    make|  model|claim_amount|approved_amount|claim_status|fraud_flag|
++--------+---------+-------------------+--------+--------+-------+------------+---------------+------------+----------+
+|   CL010|     P009|  Fresh Farm Market|Portland|    Tata|Harrier|      600000|         550000|     Settled|         1|
+|   CL016|     P014| Northstar Supplies| Seattle|  Toyota| Innova|      250000|         210000|Under Review|         0|
+|   CL017|     P015|Sunrise Electronics| Atlanta|Mahindra| XUV700|      500000|              0|Under Review|         1|
++--------+---------+-------------------+--------+--------+-------+------------+---------------+------------+----------+
+	
+	
+	
+8. Fraud Investigation Report: Create a report containing fraud-flagged claims with:
+	Customer name
+	City
+	Vehicle make and model
+	Claim amount
+	Approved amount
+	Claim status
+	Policy type
+	
++--------+---------+-------------------+--------+--------+-------+------------+---------------+------------+-------------+
+|claim_id|policy_id|      customer_name|    city|    make|  model|claim_amount|approved_amount|claim_status|  policy_type|
++--------+---------+-------------------+--------+--------+-------+------------+---------------+------------+-------------+
+|   CL010|     P009|  Fresh Farm Market|Portland|    Tata|Harrier|      600000|         550000|     Settled|Comprehensive|
+|   CL017|     P015|Sunrise Electronics| Atlanta|Mahindra| XUV700|      500000|              0|Under Review|Comprehensive|
++--------+---------+-------------------+--------+--------+-------+------------+---------------+------------+-------------+
+
+9. Using the final joined DataFrame, answer:
+	Which customer segment has the highest total claim amount?
++----------------+------------------+
+|customer_segment|total_claim_amount|
++----------------+------------------+
+|  Small Business|           1395000|
++----------------+------------------+
+	Which city has the highest total claim amount?
++-------+------------------+
+|   city|total_claim_amount|
++-------+------------------+
+|Atlanta|            832000|
++-------+------------------+
+	Which vehicle model has the highest total claim amount?
++------+------------------+
+| model|total_claim_amount|
++------+------------------+
+|XUV700|            832000|
++------+------------------+
+	Which policies have multiple claims?
++---------+----------+
+|policy_id|num_claims|
++---------+----------+
+|     P012|         2|
+|     P002|         2|
+|     P005|         2|
++---------+----------+
+	Which policies have no claims?
++---------+----------+-----------+--------------+-----------+-------------+
+|policy_id|vehicle_id|policy_type|premium_amount|sum_insured|policy_status|
++---------+----------+-----------+--------------+-----------+-------------+
+|     P008|      V008|Third Party|          5500|     300000|      Expired|
++---------+----------+-----------+--------------+-----------+-------------+
+	Which policies were not renewed?
++---------+----------+-----------+-----------------+---------------+--------------+-----------+-------------+-------------+
+|policy_id|vehicle_id|policy_type|policy_start_date|policy_end_date|premium_amount|sum_insured|sales_channel|policy_status|
++---------+----------+-----------+-----------------+---------------+--------------+-----------+-------------+-------------+
++---------+----------+-----------+-----------------+---------------+--------------+-----------+-------------+-------------+
+	Which policies have pending payments?
++---------+----------+-----------+--------------+-----------+-------------+
+|policy_id|vehicle_id|policy_type|premium_amount|sum_insured|policy_status|
++---------+----------+-----------+--------------+-----------+-------------+
++---------+----------+-----------+--------------+-----------+-------------+
+	Which claims are fraud-flagged?
++--------+---------+----------------+------------+----------+------------+
+|claim_id|policy_id|customer_segment|claim_amount|fraud_flag|claim_status|
++--------+---------+----------------+------------+----------+------------+
+|   CL010|     P009|  Small Business|      600000|         1|     Settled|
+|   CL017|     P015|      Mid-Market|      500000|         1|Under Review|
++--------+---------+----------------+------------+----------+------------+
+	Which claims have the highest outstanding amount?
++--------+---------+----------------+------------+---------------+------------------+
+|claim_id|policy_id|customer_segment|claim_amount|approved_amount|outstanding_amount|
++--------+---------+----------------+------------+---------------+------------------+
+|   CL017|     P015|      Mid-Market|      500000|              0|            500000|
+|   CL006|     P005|      Mid-Market|      310000|         250000|             60000|
+|   CL010|     P009|  Small Business|      600000|         550000|             50000|
+|   CL003|     P002|      Mid-Market|      220000|         180000|             40000|
+|   CL016|     P014|  Small Business|      250000|         210000|             40000|
+|   CL009|     P007|      Enterprise|      175000|         140000|             35000|
+|   CL005|     P004|  Small Business|      450000|         420000|             30000|
+|   CL013|     P012|      Mid-Market|      125000|         100000|             25000|
+|   CL004|     P003|      Enterprise|       45000|          30000|             15000|
+|   CL008|     P006|  Small Business|       95000|          80000|             15000|
++--------+---------+----------------+------------+---------------+------------------+
+	Which policy has the highest claim amount compared with its sum insured?
++---------+------------+-----------+--------------------------+
+|policy_id|claim_amount|sum_insured|claim_to_sum_insured_ratio|
++---------+------------+-----------+--------------------------+
+|     P009|      600000|    1650000|       0.36363636363636365|
+|     P004|      450000|    1700000|        0.2647058823529412|
+|     P015|      500000|    2050000|       0.24390243902439024|
+|     P002|      220000|    1350000|       0.16296296296296298|
+|     P005|      310000|    2000000|                     0.155|
+|     P003|       45000|     300000|                      0.15|
+|     P014|      250000|    1750000|       0.14285714285714285|
+|     P001|       85000|     600000|       0.14166666666666666|
+|     P007|      175000|    1400000|                     0.125|
+|     P006|       95000|    1000000|                     0.095|
++---------+------------+-----------+--------------------------+
